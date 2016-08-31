@@ -11,9 +11,23 @@ public class BoxPingReq implements Serializable{
 	private String machineCode;
 	private int deviceId;
 	private String lastPingTime;
+	private String sign;
+	private String version;
 	
+	public String getSign() {
+		return sign;
+	}
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
 	public int getUid() {
 		return uid;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
 	}
 	public void setUid(int uid) {
 		this.uid = uid;

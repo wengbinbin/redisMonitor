@@ -5,7 +5,14 @@ public class OnlineMachineInfo {
 	private String machineCode;
 	private int deviceId;
 	private String lastPingTime;
+	private String version;
 	
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
 	public int getUid() {
 		return uid;
 	}

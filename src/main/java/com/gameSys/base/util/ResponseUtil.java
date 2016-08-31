@@ -1,5 +1,6 @@
-package com.gameSys.monitor.response;
+package com.gameSys.base.util;
 
+import com.gameSys.monitor.response.RespResult;
 
 public class ResponseUtil {
 	public static final String SUCCESS="0000";

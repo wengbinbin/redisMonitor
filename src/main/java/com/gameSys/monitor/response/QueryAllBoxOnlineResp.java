@@ -10,8 +10,9 @@ public class QueryAllBoxOnlineResp extends RespResult{
 	 * 
 	 */
 	private static final long serialVersionUID = -5950648701143783960L;
-	
+
 	private List<OnlineMachineInfo> onlineMachineInfosList;
+	
 
 	public List<OnlineMachineInfo> getOnlineMachineInfosList() {
 		return onlineMachineInfosList;

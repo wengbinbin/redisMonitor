@@ -1,5 +1,8 @@
 package com.gameSys.monitor.config;
 
+import javax.net.ssl.HostnameVerifier;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +16,13 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 @ComponentScan(basePackages="com.gameSys.service")
 public class LocalRedisConfig {
+	@Value("${spring.redis.host}")
+	private String hostName;
+	@Value("${spring.redis.port}")
+	private int port;
+	@Value("${spring.redis.password}")
+	private String passWord;
+	
     @Bean
     public RedisConnectionFactory jedisConnectionFactory(){
         JedisPoolConfig poolConfig=new JedisPoolConfig();
@@ -25,6 +35,11 @@ public class LocalRedisConfig {
         poolConfig.setTimeBetweenEvictionRunsMillis(60000);
 
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(poolConfig);
+        jedisConnectionFactory.setHostName(hostName);  
+//        if(!passWord.isEmpty()){  
+//            jedisConnectionFactory.setPassword(passWord);  
+//        }  
+        jedisConnectionFactory.setPort(port);  
         return jedisConnectionFactory;
     }
 
